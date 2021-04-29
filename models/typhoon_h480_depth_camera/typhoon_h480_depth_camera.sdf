@@ -7,11 +7,11 @@
 
     <include>
       <uri>model://depth_camera_modified</uri>
-      <pose>0.1 0 0 0 0 0</pose>
+      <pose>0.08 0 0.21 0 0 0</pose>
     </include>
     <joint name="depth_camera_joint" type="revolute">
       <child>depth_camera_modified::link</child>
-      <parent>iris::base_link</parent>
+      <parent>typhoon_h480::base_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
