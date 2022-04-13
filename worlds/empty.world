@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<sdf version='1.5'>
-  <world name='default'>
+<sdf version="1.5">
+  <world name="default">
     <!-- A global light source -->
     <include>
       <uri>model://sun</uri>
@@ -63,8 +63,8 @@
       <real_time_update_rate>250</real_time_update_rate>
       <magnetic_field>6.0e-6 2.3e-5 -4.2e-5</magnetic_field>
     </physics>
-    
-    
+
+
     <actor name="actor_0">
       <skin>
         <filename>model://walker/walk_0.dae</filename>
@@ -75,7 +75,7 @@
         <scale>1.000000</scale>
         <interpolate_x>true</interpolate_x>
       </animation>
-      <plugin name="actor1_plugin" filename="libros_actor_cmd_pose_plugin.so">
+      <plugin name="actor0_plugin" filename="libros_actor_cmd_pose_plugin.so">
         <init_pose>0 0 1.25 1.57 0 0</init_pose>
         <animation_factor>5.1</animation_factor>
       </plugin>
@@ -92,7 +92,7 @@
         <scale>1.000000</scale>
         <interpolate_x>true</interpolate_x>
       </animation>
-      <plugin name="actor2_plugin" filename="libros_actor_cmd_pose_plugin.so">
+      <plugin name="actor1_plugin" filename="libros_actor_cmd_pose_plugin.so">
         <init_pose>70 22 1.25 1.57 0 0</init_pose>
         <animation_factor>5.1</animation_factor>
       </plugin>
