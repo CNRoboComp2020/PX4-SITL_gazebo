@@ -1,0 +1,168 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <model name="ground_plane">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>400 400</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>200 200</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <physics name='default_physics' default='0' type='ode'>
+      <gravity>0 0 -9.8066</gravity>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>10</iters>
+          <sor>1.3</sor>
+          <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100</contact_max_correcting_vel>
+          <contact_surface_layer>0.001</contact_surface_layer>
+        </constraints>
+      </ode>
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+      <magnetic_field>6.0e-6 2.3e-5 -4.2e-5</magnetic_field>
+    </physics>
+
+
+    <actor name="actor_0">
+      <skin>
+        <filename>model://walker/walk_0.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://walker/walk_0.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <plugin name="actor0_plugin" filename="libros_actor_cmd_pose_plugin.so">
+        <init_pose>0 0 1.25 1.57 0 0</init_pose>
+        <animation_factor>5.1</animation_factor>
+      </plugin>
+    </actor>
+
+
+    <actor name="actor_1">
+      <skin>
+        <filename>model://walker/walk_1.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://walker/walk_1.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <plugin name="actor1_plugin" filename="libros_actor_cmd_pose_plugin.so">
+        <init_pose>70 22 1.25 1.57 0 0</init_pose>
+        <animation_factor>5.1</animation_factor>
+      </plugin>
+    </actor>
+
+    <actor name="actor_2">
+      <skin>
+        <filename>model://walker/walk_2.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://walker/walk_2.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <plugin name="actor2_plugin" filename="libros_actor_cmd_pose_plugin.so">
+        <init_pose>18 -18 1.25 1.57 0 0</init_pose>
+        <animation_factor>5.1</animation_factor>
+      </plugin>
+    </actor>
+
+    <actor name="actor_3">
+      <skin>
+        <filename>model://walker/walk_3.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://walker/walk_3.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <plugin name="actor3_plugin" filename="libros_actor_cmd_pose_plugin.so">
+        <init_pose>72 32 1.25 1.57 0 0</init_pose>
+        <animation_factor>5.1</animation_factor>
+      </plugin>
+    </actor>
+
+    <actor name="actor_4">
+      <skin>
+        <filename>model://walker/walk_4.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://walker/walk_4.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <plugin name="actor4_plugin" filename="libros_actor_cmd_pose_plugin.so">
+        <init_pose>-32 -27 1.25 1.57 0 0</init_pose>
+        <animation_factor>5.1</animation_factor>
+      </plugin>
+    </actor>
+
+    <actor name="actor_5">
+      <skin>
+        <filename>model://walker/walk_5.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://walker/walk_5.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <plugin name="actor5_plugin" filename="libros_actor_cmd_pose_plugin.so">
+        <init_pose>-35 -28 1.25 1.57 0 0</init_pose>
+        <animation_factor>5.1</animation_factor>
+      </plugin>
+    </actor>
+
+
+
+  </world>
+</sdf>
